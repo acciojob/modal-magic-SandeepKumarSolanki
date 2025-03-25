@@ -1,21 +1,24 @@
 //your JS code here. If required.
 
-let openModal = document.getElementsByClassName('modal');
-let modalBody = document.getElementsByClassName('modal-body')
-let closeBtn = document.getElementsByClassName('close-modal');
+// Get the modal element and buttons
+const openModalBtn = document.getElementById('openModal');
+const modal = document.querySelector('.modal');
+const closeModalBtn = document.querySelector('.close-modal');
 
-openModal.addEventListener('click' , ()=>{
-	modalBody.style.display='block';
+openModalBtn.addEventListener("click" , ()=>{
+	modal.style.display = 'block';
 })
 
-function closeModal() {
-	modalBody.style.display='none';
+function closeModal(){
+	modal.style.display = 'none';
 }
 
-closeBtn.addEventListener('click',closeModal);
+closeModalBtn.addEventListener('click' , closeModal);
 
-window.addEventListner('click', (e)=>{
-	if(e.target === modal){
+window.addEventListener('click' , (event)=>{
+	if(event.target === modal){
 		closeModal();
 	}
 })
+
+
